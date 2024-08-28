@@ -1,4 +1,11 @@
 ---
+import { db, User } from 'astro:db';
+
+  const queries = [];
+  for (let i = 0; i < 100; i++) {
+    queries.push(db.insert(User).values({user: "Houston"}));
+  }
+  await db.batch(queries); 
 
 ---
 
